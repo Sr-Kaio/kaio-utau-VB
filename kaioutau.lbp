@@ -1,0 +1,5186 @@
+{
+    "version": 3,
+    "rootSampleDirectory": "D:\\VoiceBanks\\kaioutau",
+    "workingDirectory": "",
+    "projectName": "kaioutau",
+    "cacheDirectory": "kaioutau.lbp.caches",
+    "labelerConf": {
+        "name": "utau-singer.default",
+        "version": 25,
+        "serialVersion": 2,
+        "singleFile": false,
+        "extension": "ini",
+        "defaultInputFilePath": null,
+        "displayedName": {
+            "en": "UTAU singer labeler",
+            "zh": "UTAU singer 标注器",
+            "ja": "UTAU singer ラベラー",
+            "ko": "UTAU singer 라벨러"
+        },
+        "author": "sdercolin",
+        "email": "sder.colin@gmail.com",
+        "description": {
+            "en": "Default labeler for UTAU singer (multiple pitches). `oto.ini` files under every folder that contains sample voices will be created/edited. Please set the sample directory to the root directory of the singer.",
+            "zh": "用于 UTAU singer（多音阶）的默认标注器。会在包含采样音频的每个文件夹下创建/编辑 `oto.ini` 文件。请将采样目录设置为歌手的根目录。",
+            "ja": "UTAU 音源（多音階）のデフォルトラベラーです。サンプル音声を含むフォルダーの中に `oto.ini` ファイルを作成/編集します。サンプルディレクトリを歌手のルートディレクトリに設定してください。",
+            "ko": "기본 내장된 UTAU 다음계 음원용 라벨러에요. 샘플 폴더는 가수의 루트 폴더로 지정해 주세요. 샘플이 존재하는 모든 하위 폴더마다 `oto.ini`가 생성되며, 라벨러를 통해 편집할 수 있게 됩니다."
+        },
+        "website": "https://github.com/sdercolin/vlabeler/tree/main/resources/common/labelers/utau-singer-labeler",
+        "categoryTag": "UTAU",
+        "displayOrder": 0,
+        "continuous": false,
+        "allowSameNameEntry": false,
+        "defaultEntryName": null,
+        "defaultValues": [
+            100.0,
+            400.0,
+            300.0,
+            200.0,
+            100.0,
+            500.0
+        ],
+        "defaultExtras": null,
+        "fields": [
+            {
+                "name": "fixed",
+                "label": {
+                    "en": "Fixed",
+                    "zh": "固",
+                    "ja": "子",
+                    "ko": "고정"
+                },
+                "color": "#1b51ff",
+                "height": 0.5,
+                "dragBase": false,
+                "filling": "left",
+                "constraints": [
+                    {
+                        "min": 3,
+                        "max": null
+                    }
+                ],
+                "shortcutIndex": 3,
+                "replaceStart": false,
+                "replaceEnd": false,
+                "triggerPostEditNext": false,
+                "triggerPostEditDone": true
+            },
+            {
+                "name": "preu",
+                "label": {
+                    "en": "Preu",
+                    "zh": "先",
+                    "ja": "先",
+                    "ko": "선행"
+                },
+                "color": "#ff1a45",
+                "height": 0.6667,
+                "dragBase": true,
+                "filling": null,
+                "constraints": [
+                    {
+                        "min": 3,
+                        "max": 0
+                    }
+                ],
+                "shortcutIndex": 2,
+                "replaceStart": false,
+                "replaceEnd": false,
+                "triggerPostEditNext": false,
+                "triggerPostEditDone": true
+            },
+            {
+                "name": "ovl",
+                "label": {
+                    "en": "Ovl",
+                    "zh": "重",
+                    "ja": "オ",
+                    "ko": "오버"
+                },
+                "color": "#7fff39",
+                "height": 0.8333,
+                "dragBase": false,
+                "filling": null,
+                "constraints": [
+                    {
+                        "min": null,
+                        "max": 0
+                    }
+                ],
+                "shortcutIndex": 1,
+                "replaceStart": false,
+                "replaceEnd": false,
+                "triggerPostEditNext": false,
+                "triggerPostEditDone": true
+            },
+            {
+                "name": "left",
+                "label": {
+                    "en": "Left",
+                    "zh": "左",
+                    "ja": "左",
+                    "ko": "왼쪽"
+                },
+                "color": "#9c7212",
+                "height": 0.9,
+                "dragBase": false,
+                "filling": "start",
+                "constraints": [
+                ],
+                "shortcutIndex": null,
+                "replaceStart": true,
+                "replaceEnd": false,
+                "triggerPostEditNext": false,
+                "triggerPostEditDone": false
+            }
+        ],
+        "extraFieldNames": null,
+        "extraFields": [
+            {
+                "name": "rawRight",
+                "default": "500",
+                "displayedName": "Raw right",
+                "isVisible": false,
+                "isEditable": false,
+                "isOptional": false
+            }
+        ],
+        "moduleExtraFields": [
+        ],
+        "lockedDrag": {
+            "useDragBase": true,
+            "useStart": false
+        },
+        "overflowBeforeStart": "AdjustBorder",
+        "overflowAfterEnd": "AdjustBorder",
+        "postEditNextTrigger": {
+            "useStart": false,
+            "useEnd": false
+        },
+        "postEditDoneTrigger": {
+            "useStart": true,
+            "useEnd": true
+        },
+        "decimalDigit": 2,
+        "entrySimilarityWeights": {
+            "name": 6.0,
+            "sample": 12.0,
+            "start": 1.0,
+            "end": 1.0,
+            "points": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "extras": [
+                0.0
+            ],
+            "tag": 0.0,
+            "threshold": 0.75
+        },
+        "properties": [
+            {
+                "name": "left",
+                "displayedName": {
+                    "en": "Offset",
+                    "zh": "左边界",
+                    "ja": "左ブランク",
+                    "ko": "오프셋"
+                },
+                "valueGetter": [
+                    "value = entry.points[3]",
+                    ""
+                ],
+                "valueSetter": [
+                    "entry.points[3] = value",
+                    "if (value < entry.start) {",
+                    "    entry.start = value",
+                    "}",
+                    ""
+                ],
+                "shortcutIndex": 0
+            },
+            {
+                "name": "ovl",
+                "displayedName": {
+                    "en": "Overlap",
+                    "zh": "重叠",
+                    "ja": "オーバーラップ",
+                    "ko": "오버랩"
+                },
+                "valueGetter": [
+                    "value = entry.points[2] - entry.points[3]",
+                    ""
+                ],
+                "valueSetter": [
+                    "newOverlap = value + entry.points[3]",
+                    "entry.points[2] = newOverlap",
+                    "if (newOverlap < entry.start) {",
+                    "    entry.start = newOverlap",
+                    "}",
+                    ""
+                ],
+                "shortcutIndex": 1
+            },
+            {
+                "name": "preu",
+                "displayedName": {
+                    "en": "Preutterance",
+                    "zh": "先行发声",
+                    "ja": "先行発声",
+                    "ko": "선행자음부"
+                },
+                "valueGetter": [
+                    "value = entry.points[1] - entry.points[3]",
+                    ""
+                ],
+                "valueSetter": [
+                    "entry.points[1] = value + entry.points[3]",
+                    ""
+                ],
+                "shortcutIndex": 2
+            },
+            {
+                "name": "fixed",
+                "displayedName": {
+                    "en": "Fixed",
+                    "zh": "固定",
+                    "ja": "固定範囲",
+                    "ko": "고정자음부"
+                },
+                "valueGetter": [
+                    "value = entry.points[0] - entry.points[3]",
+                    ""
+                ],
+                "valueSetter": [
+                    "entry.points[0] = value + entry.points[3]",
+                    ""
+                ],
+                "shortcutIndex": 3
+            },
+            {
+                "name": "right",
+                "displayedName": {
+                    "en": "Cutoff",
+                    "zh": "右边界",
+                    "ja": "右ブランク",
+                    "ko": "컷오프"
+                },
+                "valueGetter": [
+                    "if (entry.needSync || entry.end < 0) {",
+                    "    value = parseFloat(entry.extras[0])",
+                    "} else {",
+                    "    value = entry.points[3] - entry.end",
+                    "}",
+                    ""
+                ],
+                "valueSetter": [
+                    "if (value < 0) {",
+                    "    entry.end = -value + entry.points[3]",
+                    "} else {",
+                    "    entry.needSync = true",
+                    "    entry.end = -value",
+                    "    entry.extras[0] = value.toString()",
+                    "}",
+                    ""
+                ],
+                "shortcutIndex": 4
+            }
+        ],
+        "parser": {
+            "scope": "Entry",
+            "defaultEncoding": "Shift-JIS",
+            "extractionPattern": "(.*)=(.*),(.*),(.*),(.*),(.*),(.*)",
+            "variableNames": [
+                "sample",
+                "name",
+                "left",
+                "fixed",
+                "right",
+                "preu",
+                "ovl"
+            ],
+            "scripts": [
+                "if (typeof sample === 'undefined' || !sample) {",
+                "    error('Sample name is empty.')",
+                "}",
+                "if (typeof sample === 'undefined' || !name) {",
+                "    name = getNameWithoutExtension(sample)",
+                "}",
+                "offset = 0",
+                "if (ovl === '') {",
+                "    ovl = '0'",
+                "}",
+                "ovl = parseFloat(ovl)",
+                "if (ovl < 0) {",
+                "    offset = -ovl",
+                "}",
+                "if (left === '') {",
+                "    left = '0'",
+                "}",
+                "left = parseFloat(left)",
+                "start = left - offset",
+                "points = []",
+                "extras = []",
+                "if (fixed === '') {",
+                "    fixed = '0'",
+                "}",
+                "fixed = parseFloat(fixed)",
+                "if (fixed < 0) {",
+                "    fixed = 0",
+                "}",
+                "points.push(fixed + left)",
+                "if (right === '') {",
+                "    right = '0'",
+                "}",
+                "right = parseFloat(right)",
+                "rawRight = right // for restoring from a non-negative value (distance to sample end)",
+                "extras.push(rawRight)",
+                "if (right < 0) {",
+                "    end = left - right",
+                "} else {",
+                "    end = -right",
+                "}",
+                "if (preu === '') {",
+                "    preu = '0'",
+                "}",
+                "preu = parseFloat(preu)",
+                "if (preu < 0) {",
+                "    preu = 0",
+                "}",
+                "points.push(preu + left)",
+                "points.push(ovl + left)",
+                "points.push(left)",
+                "needSync = right >= 0",
+                "entry = new Entry(sample, name, start, end, points, extras, new Notes(), needSync)",
+                ""
+            ]
+        },
+        "writer": {
+            "scope": "Entry",
+            "format": "{sample}={name},{left},{fixed},{right},{preu},{ovl}",
+            "scripts": null
+        },
+        "parameters": [
+            {
+                "parameter": {
+                    "type": "boolean",
+                    "name": "useNegativeOvl",
+                    "label": {
+                        "en": "Allow negative overlap",
+                        "zh": "允许重叠为负值",
+                        "ja": "オーバーラップのマイナス値を許容する",
+                        "ko": "오버랩 음수값 허용하기"
+                    },
+                    "description": null,
+                    "enableIf": null,
+                    "defaultValue": true
+                },
+                "injector": [
+                    "labeler.fields[2].constraints[0].min = value ? null : 3",
+                    ""
+                ],
+                "changeable": true
+            },
+            {
+                "parameter": {
+                    "type": "enum",
+                    "name": "dragBase",
+                    "label": {
+                        "en": "Base for fixed-drag",
+                        "zh": "锁定拖动的基准参数",
+                        "ja": "連動ドラッグの基準",
+                        "ko": "고정 드래그의 기준 마커"
+                    },
+                    "description": null,
+                    "enableIf": null,
+                    "defaultValue": "Preutterance",
+                    "options": [
+                        "Left",
+                        "Overlap",
+                        "Preutterance",
+                        "Fixed"
+                    ],
+                    "optionDisplayedNames": [
+                        {
+                            "en": "Left",
+                            "zh": "左边界",
+                            "ja": "左ブランク",
+                            "ko": "왼쪽 끝"
+                        },
+                        {
+                            "en": "Overlap",
+                            "zh": "重叠",
+                            "ja": "オーバーラップ",
+                            "ko": "오버랩"
+                        },
+                        {
+                            "en": "Preutterance",
+                            "zh": "先行发声",
+                            "ja": "先行発声",
+                            "ko": "선행자음부"
+                        },
+                        {
+                            "en": "Fixed",
+                            "zh": "固定",
+                            "ja": "固定範囲",
+                            "ko": "고정자음부"
+                        }
+                    ]
+                },
+                "injector": [
+                    "if (value !== 'Preutterance') {",
+                    "    labeler.fields[1].dragBase = false",
+                    "}",
+                    "if (value === 'Fixed') {",
+                    "    labeler.fields[0].dragBase = true",
+                    "}",
+                    "if (value === 'Overlap') {",
+                    "    labeler.fields[2].dragBase = true",
+                    "}",
+                    "if (value === 'Left') {",
+                    "    labeler.lockedDrag.useDragBase = false",
+                    "    labeler.lockedDrag.useStart = true",
+                    "}",
+                    ""
+                ],
+                "changeable": true
+            },
+            {
+                "parameter": {
+                    "type": "boolean",
+                    "name": "useRootDirectory",
+                    "label": {
+                        "en": "Include samples under the root directory of the singer",
+                        "zh": "包括歌手根目录下的采样",
+                        "ja": "歌手のルートディレクトリ以下のサンプルを含める",
+                        "ko": "편집이 끝나면 다음 엔트리로 이동"
+                    },
+                    "description": null,
+                    "enableIf": null,
+                    "defaultValue": false
+                },
+                "injector": null,
+                "changeable": false
+            },
+            {
+                "parameter": {
+                    "type": "boolean",
+                    "name": "forceRecursive",
+                    "label": {
+                        "en": "Include children of child directories",
+                        "zh": "包括子文件夹的子文件夹",
+                        "ja": "子ディレクトリの子を含める",
+                        "ko": "하위 폴더 내부의 폴더까지 포함하기"
+                    },
+                    "description": {
+                        "en": "By default, only direct children of the root directory will be included due to restriction of UTAU. If you have samples in folders whose depth is greater than 1, please enable this option.",
+                        "zh": "由于 UTAU 的限制，默认情况下只有根目录的直接子文件夹会被包括。如果您的采样文件夹的深度大于 1，请启用此选项。",
+                        "ja": "UTAUの制限により、デフォルトではルートディレクトリの直接の子のみが含まれます。深さが1より大きいフォルダーにサンプルがある場合は、このオプションを有効にしてください。",
+                        "ko": "UTAU의 경우, 제약이 있어 한 겹의 하위 폴더까지만 포함시킬 수 있어요. 한 겹을 넘어가는 하위 폴더에 있는 샘플들을 편집해야 한다면, 이 항목을 활성화해 주세요. "
+                    },
+                    "enableIf": null,
+                    "defaultValue": false
+                },
+                "injector": null,
+                "changeable": false
+            },
+            {
+                "parameter": {
+                    "type": "enum",
+                    "name": "postEditNextTrigger",
+                    "label": {
+                        "en": "Go to next entry after editing",
+                        "zh": "编辑后跳转到下一个条目",
+                        "ja": "編集後に次のエントリーに移動する",
+                        "ko": "편집이 끝나면 다음 엔트리로 이동"
+                    },
+                    "description": {
+                        "en": "Please enable this action in `Preferences` -> `Editor` -> `Post-editing actions`, and choose `Use settings defined by the labeler` as the trigger.",
+                        "zh": "请在`环境设置`->`编辑器`->`编辑后动作`中启用此功能，并选择`使用标注器的设置`为`触发该行为的参数`。",
+                        "ja": "`環境設定`->`エディタ`->`編集後アクション`でこの機能を有効にし、`アクションを実行できるパラメータ`では`ラベラーの設定`を選択してください。",
+                        "ko": "활성화하려면 `환경설정` -> `에디터` -> `사전편집 동작`을 누른 후, `라벨러에 의해 정의된 설정 사용`을 선택해 주세요."
+                    },
+                    "enableIf": null,
+                    "defaultValue": "Disable",
+                    "options": [
+                        "Disable",
+                        "Left",
+                        "Overlap",
+                        "Preutterance",
+                        "Fixed",
+                        "Cutoff",
+                        "Any"
+                    ],
+                    "optionDisplayedNames": [
+                        {
+                            "en": "Disable",
+                            "zh": "禁用",
+                            "ja": "無効",
+                            "ko": "비활성"
+                        },
+                        {
+                            "en": "Left",
+                            "zh": "左边界",
+                            "ja": "左ブランク",
+                            "ko": "왼쪽 끝"
+                        },
+                        {
+                            "en": "Overlap",
+                            "zh": "重叠",
+                            "ja": "オーバーラップ",
+                            "ko": "오버랩"
+                        },
+                        {
+                            "en": "Preutterance",
+                            "zh": "先行发声",
+                            "ja": "先行発声",
+                            "ko": "선행자음부"
+                        },
+                        {
+                            "en": "Fixed",
+                            "zh": "固定",
+                            "ja": "固定範囲",
+                            "ko": "고정자음부"
+                        },
+                        {
+                            "en": "Cutoff",
+                            "zh": "右边界",
+                            "ja": "右ブランク",
+                            "ko": "컷오프"
+                        },
+                        {
+                            "en": "Any",
+                            "zh": "任意",
+                            "ja": "任意",
+                            "ko": "아무거나"
+                        }
+                    ]
+                },
+                "injector": [
+                    "if (value === 'Left') {",
+                    "    labeler.postEditNextTrigger = {'useStart': true}",
+                    "}",
+                    "if (value === 'Fixed') {",
+                    "    labeler.fields[0].triggerPostEditNext = true",
+                    "}",
+                    "if (value === 'Preutterance') {",
+                    "    labeler.fields[1].triggerPostEditNext = true",
+                    "}",
+                    "if (value === 'Overlap') {",
+                    "    labeler.fields[2].triggerPostEditNext = true",
+                    "}",
+                    "if (value === 'Cutoff') {",
+                    "    labeler.postEditNextTrigger = {'useEnd': true}",
+                    "}",
+                    "if (value === 'Any') {",
+                    "    labeler.postEditNextTrigger = {'useStart': true, 'useEnd': true}",
+                    "    labeler.fields[0].triggerPostEditNext = true",
+                    "    labeler.fields[1].triggerPostEditNext = true",
+                    "    labeler.fields[2].triggerPostEditNext = true",
+                    "}",
+                    ""
+                ],
+                "changeable": true
+            },
+            {
+                "parameter": {
+                    "type": "enum",
+                    "name": "postEditDoneTrigger",
+                    "label": {
+                        "en": "Mark entry as `Done` after editing",
+                        "zh": "编辑后标记为已完成条目",
+                        "ja": "編集後にエントリーを\"完了\"にする",
+                        "ko": "편집된 엔트리에 자동으로 \"완료\" 표시"
+                    },
+                    "description": {
+                        "en": "Please enable this action in `Preferences` -> `Editor` -> `Post-editing actions`, and choose `Use settings defined by the labeler` as the trigger.",
+                        "zh": "请在`环境设置`->`编辑器`->`编辑后动作`中启用此功能，并选择`使用标注器的设置`为`触发该行为的参数`。",
+                        "ja": "`環境設定`->`エディタ`->`編集後アクション`でこの機能を有効にし、`アクションを実行できるパラメータ`では`ラベラーの設定`を選択してください。",
+                        "ko": "활성화하려면 `환경설정` -> `에디터` -> `사전편집 동작`을 누른 후, `라벨러에 의해 정의된 설정 사용`을 선택해 주세요."
+                    },
+                    "enableIf": null,
+                    "defaultValue": "Any",
+                    "options": [
+                        "Disable",
+                        "Left",
+                        "Overlap",
+                        "Preutterance",
+                        "Fixed",
+                        "Cutoff",
+                        "Any"
+                    ],
+                    "optionDisplayedNames": [
+                        {
+                            "en": "Disable",
+                            "zh": "禁用",
+                            "ja": "無効",
+                            "ko": "비활성"
+                        },
+                        {
+                            "en": "Left",
+                            "zh": "左边界",
+                            "ja": "左ブランク",
+                            "ko": "왼쪽 끝"
+                        },
+                        {
+                            "en": "Overlap",
+                            "zh": "重叠",
+                            "ja": "オーバーラップ",
+                            "ko": "오버랩"
+                        },
+                        {
+                            "en": "Preutterance",
+                            "zh": "先行发声",
+                            "ja": "先行発声",
+                            "ko": "선행자음부"
+                        },
+                        {
+                            "en": "Fixed",
+                            "zh": "固定",
+                            "ja": "固定範囲",
+                            "ko": "고정자음부"
+                        },
+                        {
+                            "en": "Cutoff",
+                            "zh": "右边界",
+                            "ja": "右ブランク",
+                            "ko": "컷오프"
+                        },
+                        {
+                            "en": "Any",
+                            "zh": "任意",
+                            "ja": "任意",
+                            "ko": "아무거나"
+                        }
+                    ]
+                },
+                "injector": [
+                    "if (value === 'Disable') {",
+                    "    labeler.postEditDoneTrigger = {}",
+                    "    labeler.fields[0].triggerPostEditDone = false",
+                    "    labeler.fields[1].triggerPostEditDone = false",
+                    "    labeler.fields[2].triggerPostEditDone = false",
+                    "}",
+                    "if (value === 'Left') {",
+                    "    labeler.postEditDoneTrigger = {'useStart': true}",
+                    "    labeler.fields[0].triggerPostEditDone = false",
+                    "    labeler.fields[1].triggerPostEditDone = false",
+                    "    labeler.fields[2].triggerPostEditDone = false",
+                    "}",
+                    "if (value === 'Fixed') {",
+                    "    labeler.postEditDoneTrigger = {}",
+                    "    labeler.fields[1].triggerPostEditDone = false",
+                    "    labeler.fields[2].triggerPostEditDone = false",
+                    "}",
+                    "if (value === 'Preutterance') {",
+                    "    labeler.postEditDoneTrigger = {}",
+                    "    labeler.fields[0].triggerPostEditDone = false",
+                    "    labeler.fields[2].triggerPostEditDone = false",
+                    "}",
+                    "if (value === 'Overlap') {",
+                    "    labeler.postEditDoneTrigger = {}",
+                    "    labeler.fields[0].triggerPostEditDone = false",
+                    "    labeler.fields[1].triggerPostEditDone = false",
+                    "}",
+                    "if (value === 'Cutoff') {",
+                    "    labeler.postEditDoneTrigger = {'useEnd': true}",
+                    "    labeler.fields[0].triggerPostEditDone = false",
+                    "    labeler.fields[1].triggerPostEditDone = false",
+                    "    labeler.fields[2].triggerPostEditDone = false",
+                    "}",
+                    ""
+                ],
+                "changeable": true
+            }
+        ],
+        "projectConstructor": {
+            "scripts": [
+                "// `root` is the input File object indicating the root sample directory.",
+                "// `acceptedSampleExtensions` is provided as list of strings indicating the accepted extensions of sample files",
+                "let modules = []",
+                "let rootModule = null",
+                "",
+                "function putFolder(folder, parentPath, depth) {",
+                "    let thisName = depth === 0 ? '' : (depth === 1 ? folder.getName() : parentPath + '/' + folder.getName())",
+                "    let samples = folder.listChildFiles().filter(file => acceptedSampleExtensions.includes(file.getExtension()))",
+                "    if (samples.length > 0) {",
+                "        let otoFile = folder.resolve('oto.ini')",
+                "        let otoPath = otoFile.getAbsolutePath()",
+                "        let def = new ModuleDefinition(",
+                "                thisName,",
+                "                folder.getAbsolutePath(),",
+                "                samples.map(f => f.getName()),",
+                "                [otoPath],",
+                "                otoPath",
+                "        )",
+                "        let included = true",
+                "        if (depth === 0) {",
+                "            included = params['useRootDirectory']",
+                "            rootModule = def",
+                "        }",
+                "        if (depth > 1) {",
+                "            included = otoFile.exists() || params['forceRecursive']",
+                "        }",
+                "        if (included) {",
+                "            modules.push(def)",
+                "        }",
+                "    }",
+                "    folder.listChildDirectories().forEach(f => putFolder(f, thisName, depth + 1))",
+                "}",
+                "",
+                "putFolder(root, '', 0)",
+                "if (rootModule && modules.length === 0) {",
+                "    modules.push(rootModule)",
+                "}",
+                "if (modules.length === 0) {",
+                "    error({",
+                "        en: 'No sample files found. Please check the labeler settings to ensure your sample folders are included.',",
+                "        zh: '未找到采样文件。请检查标注器设置以确保您的采样文件夹被包括在内。',",
+                "        ja: 'サンプルファイルが見つかりませんでした。ラベラーの設定でサンプルフォルダーが含まれていることを確認してください。',",
+                "        ko: '샘플 파일을 찾지 못했습니다. 라벨러 설정에서 샘플 폴더가 잘 포함되어 있는지 확인해 주세요.'",
+                "    })",
+                "}",
+                ""
+            ]
+        },
+        "quickProjectBuilders": [
+            {
+                "name": "default",
+                "displayedName": {
+                    "en": "Edit UTAU singer",
+                    "zh": "编辑 UTAU singer",
+                    "ja": "UTAU singer を編集する",
+                    "ko": "UTAU singer 파일 편집"
+                },
+                "description": {
+                    "en": "Select your UTAU singer folder to start quick editing.",
+                    "zh": "选择您的 UTAU singer 文件夹以开始快捷编辑。",
+                    "ja": "UTAU singer フォルダーを選択して、クイック編集を開始します。",
+                    "ko": "UTAU singer 폴더를 선택하여 빠른 편집을 시작하세요."
+                },
+                "extension": "",
+                "scripts": [
+                    "console.log(\"input=\", JSON.stringify(input))",
+                    "console.log(\"savedParams=\", JSON.stringify(savedParams))",
+                    "",
+                    "sampleDirectory = input",
+                    "projectName = sampleDirectory.getName() + \"_quickedit.lbp\"",
+                    "projectFile = sampleDirectory.resolve(projectName)",
+                    "encoding = \"Shift-JIS\"",
+                    ""
+                ]
+            }
+        ],
+        "resourceFiles": [
+        ]
+    },
+    "labelerParams": null,
+    "encoding": "Shift-JIS",
+    "multipleEditMode": false,
+    "modules": [
+        {
+            "name": "BASE",
+            "sampleDirectory": "BASE",
+            "entries": [
+                {
+                    "sample": "baseline.wav",
+                    "name": "nyu",
+                    "start": 525.17004,
+                    "end": 1197.2789,
+                    "points": [
+                        1006.80273,
+                        854.42175,
+                        688.43536,
+                        525.17004
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "にゅ",
+                    "start": 525.17004,
+                    "end": 1197.2789,
+                    "points": [
+                        1006.80273,
+                        854.42175,
+                        688.43536,
+                        525.17004
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "o",
+                    "start": 1991.8368,
+                    "end": 2563.2654,
+                    "points": [
+                        2361.9048,
+                        1991.8368,
+                        2065.3062,
+                        1991.8368
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "お",
+                    "start": 1986.3945,
+                    "end": 2563.2654,
+                    "points": [
+                        2361.9048,
+                        1991.8368,
+                        1989.1156,
+                        1986.3945
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "pa",
+                    "start": 3431.2925,
+                    "end": 3866.6667,
+                    "points": [
+                        3610.8843,
+                        3504.762,
+                        3466.6667,
+                        3431.2925
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぱ",
+                    "start": 3431.2925,
+                    "end": 3866.6667,
+                    "points": [
+                        3610.8843,
+                        3504.762,
+                        3466.6667,
+                        3431.2925
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "pe",
+                    "start": 4900.68,
+                    "end": 5355.102,
+                    "points": [
+                        5121.0884,
+                        5023.1294,
+                        4955.102,
+                        4900.68
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぺ",
+                    "start": 4900.68,
+                    "end": 5355.102,
+                    "points": [
+                        5121.0884,
+                        5023.1294,
+                        4955.102,
+                        4900.68
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "pi",
+                    "start": 6576.873,
+                    "end": 7031.292,
+                    "points": [
+                        6797.28,
+                        6699.32,
+                        6631.2925,
+                        6576.873
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぴ",
+                    "start": 6576.873,
+                    "end": 7031.292,
+                    "points": [
+                        6797.28,
+                        6699.32,
+                        6631.2925,
+                        6576.873
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "po",
+                    "start": 8217.6875,
+                    "end": 8617.676,
+                    "points": [
+                        8408.163,
+                        8285.714,
+                        8255.782,
+                        8217.6875
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぽ",
+                    "start": 8217.6875,
+                    "end": 8617.676,
+                    "points": [
+                        8408.163,
+                        8285.714,
+                        8255.782,
+                        8217.6875
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "pu",
+                    "start": 9697.959,
+                    "end": 10103.401,
+                    "points": [
+                        9915.646,
+                        9736.055,
+                        9714.286,
+                        9697.959
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぷ",
+                    "start": 9697.959,
+                    "end": 10103.401,
+                    "points": [
+                        9915.646,
+                        9736.055,
+                        9714.286,
+                        9697.959
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "pya",
+                    "start": 11268.027,
+                    "end": 11847.619,
+                    "points": [
+                        11616.326,
+                        11510.204,
+                        11390.478,
+                        11268.027
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぴゃ",
+                    "start": 11268.027,
+                    "end": 11847.619,
+                    "points": [
+                        11616.326,
+                        11510.204,
+                        11390.478,
+                        11268.027
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "pyo",
+                    "start": 12625.846,
+                    "end": 13205.437,
+                    "points": [
+                        12974.149,
+                        12868.027,
+                        12748.298,
+                        12625.846
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぴょ",
+                    "start": 12625.846,
+                    "end": 13205.437,
+                    "points": [
+                        12974.149,
+                        12868.027,
+                        12748.298,
+                        12625.846
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "pyu",
+                    "start": 14163.266,
+                    "end": 14767.347,
+                    "points": [
+                        14527.892,
+                        14465.306,
+                        14315.646,
+                        14163.266
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぴゅ",
+                    "start": 14163.266,
+                    "end": 14767.347,
+                    "points": [
+                        14527.892,
+                        14465.306,
+                        14315.646,
+                        14163.266
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ra",
+                    "start": 15885.714,
+                    "end": 16383.674,
+                    "points": [
+                        16122.449,
+                        16010.885,
+                        15956.463,
+                        15885.714
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ら",
+                    "start": 15885.714,
+                    "end": 16383.674,
+                    "points": [
+                        16122.449,
+                        16010.885,
+                        15956.463,
+                        15885.714
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "re",
+                    "start": 17197.268,
+                    "end": 17695.244,
+                    "points": [
+                        17450.34,
+                        17322.45,
+                        17268.033,
+                        17197.268
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "れ",
+                    "start": 17197.268,
+                    "end": 17695.244,
+                    "points": [
+                        17450.34,
+                        17322.45,
+                        17268.033,
+                        17197.268
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ri",
+                    "start": 18492.518,
+                    "end": 19020.414,
+                    "points": [
+                        18800.0,
+                        18647.62,
+                        18568.707,
+                        18492.518
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "り",
+                    "start": 18492.518,
+                    "end": 19020.414,
+                    "points": [
+                        18800.0,
+                        18647.62,
+                        18568.707,
+                        18492.518
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ro",
+                    "start": 19912.926,
+                    "end": 20394.564,
+                    "points": [
+                        20133.334,
+                        20021.77,
+                        19967.348,
+                        19912.926
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ろ",
+                    "start": 19912.926,
+                    "end": 20394.564,
+                    "points": [
+                        20133.334,
+                        20021.77,
+                        19967.348,
+                        19912.926
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ru",
+                    "start": 21273.469,
+                    "end": 21608.16,
+                    "points": [
+                        21439.457,
+                        21376.871,
+                        21336.055,
+                        21273.469
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "る",
+                    "start": 21273.469,
+                    "end": 21608.16,
+                    "points": [
+                        21439.457,
+                        21376.871,
+                        21336.055,
+                        21273.469
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "rya",
+                    "start": 22634.014,
+                    "end": 23145.57,
+                    "points": [
+                        22976.865,
+                        22914.285,
+                        22767.348,
+                        22634.014
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "りゃ",
+                    "start": 22634.014,
+                    "end": 23145.57,
+                    "points": [
+                        22976.865,
+                        22914.285,
+                        22767.348,
+                        22634.014
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ryo",
+                    "start": 23782.346,
+                    "end": 24293.904,
+                    "points": [
+                        24133.322,
+                        24062.586,
+                        23915.676,
+                        23782.346
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "りょ",
+                    "start": 23782.346,
+                    "end": 24293.904,
+                    "points": [
+                        24133.322,
+                        24062.586,
+                        23915.676,
+                        23782.346
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ryu",
+                    "start": 25178.232,
+                    "end": 25700.682,
+                    "points": [
+                        25531.97,
+                        25387.756,
+                        25268.027,
+                        25178.232
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "りゅ",
+                    "start": 25178.232,
+                    "end": 25700.682,
+                    "points": [
+                        25531.97,
+                        25387.756,
+                        25268.027,
+                        25178.232
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "sa",
+                    "start": 26459.863,
+                    "end": 27145.578,
+                    "points": [
+                        26919.729,
+                        26715.646,
+                        26595.918,
+                        26459.863
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "さ",
+                    "start": 26459.863,
+                    "end": 27145.578,
+                    "points": [
+                        26919.729,
+                        26715.646,
+                        26595.918,
+                        26459.863
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "se",
+                    "start": 27823.12,
+                    "end": 28560.545,
+                    "points": [
+                        28282.984,
+                        28078.91,
+                        27959.182,
+                        27823.12
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "せ",
+                    "start": 27823.12,
+                    "end": 28560.545,
+                    "points": [
+                        28282.984,
+                        28078.91,
+                        27959.182,
+                        27823.12
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "sha",
+                    "start": 29425.85,
+                    "end": 30136.047,
+                    "points": [
+                        29858.482,
+                        29654.422,
+                        29534.693,
+                        29425.85
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "しゃ",
+                    "start": 29425.85,
+                    "end": 30136.047,
+                    "points": [
+                        29858.482,
+                        29654.422,
+                        29534.693,
+                        29425.85
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "shi",
+                    "start": 31004.082,
+                    "end": 31738.799,
+                    "points": [
+                        31431.291,
+                        31257.14,
+                        31137.414,
+                        31004.082
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "し",
+                    "start": 31004.082,
+                    "end": 31738.799,
+                    "points": [
+                        31431.291,
+                        31257.14,
+                        31137.414,
+                        31004.082
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "sho",
+                    "start": 32179.592,
+                    "end": 32889.816,
+                    "points": [
+                        32582.312,
+                        32408.164,
+                        32291.154,
+                        32179.592
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "しょ",
+                    "start": 32179.592,
+                    "end": 32889.816,
+                    "points": [
+                        32582.312,
+                        32408.164,
+                        32291.154,
+                        32179.592
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "shu",
+                    "start": 33823.13,
+                    "end": 34457.14,
+                    "points": [
+                        34253.062,
+                        34040.816,
+                        33929.254,
+                        33823.13
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "しゅ",
+                    "start": 33823.13,
+                    "end": 34457.14,
+                    "points": [
+                        34253.062,
+                        34040.816,
+                        33929.254,
+                        33823.13
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "so",
+                    "start": 35504.76,
+                    "end": 36122.457,
+                    "points": [
+                        35934.695,
+                        35706.12,
+                        35600.0,
+                        35504.76
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "そ",
+                    "start": 35504.76,
+                    "end": 36122.457,
+                    "points": [
+                        35934.695,
+                        35706.12,
+                        35600.0,
+                        35504.76
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "su",
+                    "start": 37091.164,
+                    "end": 37708.86,
+                    "points": [
+                        37521.11,
+                        37292.52,
+                        37186.387,
+                        37091.164
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "す",
+                    "start": 37091.164,
+                    "end": 37708.86,
+                    "points": [
+                        37521.11,
+                        37292.52,
+                        37186.387,
+                        37091.164
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ta",
+                    "start": 38536.055,
+                    "end": 38955.1,
+                    "points": [
+                        38677.55,
+                        38609.523,
+                        38574.15,
+                        38536.055
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "た",
+                    "start": 38536.055,
+                    "end": 38955.1,
+                    "points": [
+                        38677.55,
+                        38609.523,
+                        38574.15,
+                        38536.055
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "te",
+                    "start": 40100.695,
+                    "end": 40519.754,
+                    "points": [
+                        40242.19,
+                        40174.15,
+                        40138.785,
+                        40100.695
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "て",
+                    "start": 40100.695,
+                    "end": 40519.754,
+                    "points": [
+                        40242.19,
+                        40174.15,
+                        40138.785,
+                        40100.695
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "to",
+                    "start": 41472.168,
+                    "end": 41891.203,
+                    "points": [
+                        41670.75,
+                        41545.58,
+                        41510.227,
+                        41472.168
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "と",
+                    "start": 41472.168,
+                    "end": 41891.203,
+                    "points": [
+                        41670.75,
+                        41545.58,
+                        41510.227,
+                        41472.168
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "tsu",
+                    "start": 42710.203,
+                    "end": 43333.336,
+                    "points": [
+                        43129.25,
+                        43058.504,
+                        42868.027,
+                        42710.203
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "つ",
+                    "start": 42710.203,
+                    "end": 43333.336,
+                    "points": [
+                        43129.25,
+                        43058.504,
+                        42868.027,
+                        42710.203
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "u",
+                    "start": 44465.31,
+                    "end": 45001.367,
+                    "points": [
+                        44794.56,
+                        44465.31,
+                        44571.43,
+                        44465.31
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "う",
+                    "start": 44465.31,
+                    "end": 45001.367,
+                    "points": [
+                        44794.56,
+                        44465.31,
+                        44571.43,
+                        44465.31
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "wa",
+                    "start": 46008.164,
+                    "end": 46432.652,
+                    "points": [
+                        46182.312,
+                        46106.12,
+                        46054.426,
+                        46008.164
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "わ",
+                    "start": 46008.164,
+                    "end": 46432.652,
+                    "points": [
+                        46182.312,
+                        46106.12,
+                        46054.426,
+                        46008.164
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "we",
+                    "start": 47444.9,
+                    "end": 47885.69,
+                    "points": [
+                        47651.7,
+                        47559.184,
+                        47499.32,
+                        47444.9
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "うぇ",
+                    "start": 47444.9,
+                    "end": 47885.69,
+                    "points": [
+                        47651.7,
+                        47559.184,
+                        47499.32,
+                        47444.9
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "wi",
+                    "start": 48944.2,
+                    "end": 49385.01,
+                    "points": [
+                        49151.01,
+                        49058.504,
+                        48998.656,
+                        48944.2
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "うぃ",
+                    "start": 48944.2,
+                    "end": 49385.01,
+                    "points": [
+                        49151.01,
+                        49058.504,
+                        48998.656,
+                        48944.2
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "wo",
+                    "start": 50253.066,
+                    "end": 50693.867,
+                    "points": [
+                        50459.875,
+                        50367.344,
+                        50307.51,
+                        50253.066
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "を",
+                    "start": 50253.066,
+                    "end": 50693.867,
+                    "points": [
+                        50459.875,
+                        50367.344,
+                        50307.51,
+                        50253.066
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ya",
+                    "start": 51730.61,
+                    "end": 52236.734,
+                    "points": [
+                        52002.74,
+                        51910.207,
+                        51823.13,
+                        51730.61
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "や",
+                    "start": 51730.61,
+                    "end": 52236.734,
+                    "points": [
+                        52002.74,
+                        51910.207,
+                        51823.13,
+                        51730.61
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ye",
+                    "start": 53112.934,
+                    "end": 53619.05,
+                    "points": [
+                        53385.062,
+                        53292.52,
+                        53205.445,
+                        53112.934
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "いぇ",
+                    "start": 53112.934,
+                    "end": 53619.05,
+                    "points": [
+                        53385.062,
+                        53292.52,
+                        53205.445,
+                        53112.934
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "yo",
+                    "start": 54451.7,
+                    "end": 55061.223,
+                    "points": [
+                        54854.42,
+                        54650.34,
+                        54538.773,
+                        54451.7
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "よ",
+                    "start": 54451.7,
+                    "end": 55061.223,
+                    "points": [
+                        54854.42,
+                        54650.34,
+                        54538.773,
+                        54451.7
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "yu",
+                    "start": 55763.266,
+                    "end": 56261.223,
+                    "points": [
+                        56076.19,
+                        55918.363,
+                        55842.18,
+                        55763.266
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ゆ",
+                    "start": 55763.266,
+                    "end": 56261.223,
+                    "points": [
+                        56076.19,
+                        55918.363,
+                        55842.18,
+                        55763.266
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "za",
+                    "start": 57123.812,
+                    "end": 57697.965,
+                    "points": [
+                        57453.05,
+                        57295.24,
+                        57221.77,
+                        57123.812
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ざ",
+                    "start": 57123.812,
+                    "end": 57697.965,
+                    "points": [
+                        57453.05,
+                        57295.24,
+                        57221.77,
+                        57123.812
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ze",
+                    "start": 58432.656,
+                    "end": 59006.816,
+                    "points": [
+                        58761.9,
+                        58604.082,
+                        58530.598,
+                        58432.656
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぜ",
+                    "start": 58432.656,
+                    "end": 59006.816,
+                    "points": [
+                        58761.9,
+                        58604.082,
+                        58530.598,
+                        58432.656
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "zo",
+                    "start": 59668.027,
+                    "end": 60269.367,
+                    "points": [
+                        60024.453,
+                        59866.668,
+                        59771.426,
+                        59668.027
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぞ",
+                    "start": 59668.027,
+                    "end": 60269.367,
+                    "points": [
+                        60024.453,
+                        59866.668,
+                        59771.426,
+                        59668.027
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "zu",
+                    "start": 60985.035,
+                    "end": 61507.484,
+                    "points": [
+                        61289.797,
+                        61164.62,
+                        61069.375,
+                        60985.035
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ず",
+                    "start": 60985.035,
+                    "end": 61507.484,
+                    "points": [
+                        61289.797,
+                        61164.62,
+                        61069.375,
+                        60985.035
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "a",
+                    "start": 62378.23,
+                    "end": 62927.887,
+                    "points": [
+                        62639.457,
+                        62378.23,
+                        62448.977,
+                        62378.23
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "あ",
+                    "start": 62378.23,
+                    "end": 62927.887,
+                    "points": [
+                        62639.457,
+                        62378.23,
+                        62448.977,
+                        62378.23
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ba",
+                    "start": 63804.082,
+                    "end": 64353.746,
+                    "points": [
+                        64068.027,
+                        63934.695,
+                        63866.664,
+                        63804.082
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ば",
+                    "start": 63804.082,
+                    "end": 64353.746,
+                    "points": [
+                        64068.027,
+                        63934.695,
+                        63866.664,
+                        63804.082
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "be",
+                    "start": 65317.008,
+                    "end": 65804.08,
+                    "points": [
+                        65551.02,
+                        65406.805,
+                        65355.105,
+                        65317.008
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "べ",
+                    "start": 65317.008,
+                    "end": 65804.08,
+                    "points": [
+                        65551.02,
+                        65406.805,
+                        65355.105,
+                        65317.008
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "bi",
+                    "start": 66821.79,
+                    "end": 67308.88,
+                    "points": [
+                        67055.79,
+                        66911.56,
+                        66859.85,
+                        66821.79
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "び",
+                    "start": 66821.79,
+                    "end": 67308.88,
+                    "points": [
+                        67055.79,
+                        66911.56,
+                        66859.85,
+                        66821.79
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "bo",
+                    "start": 68234.016,
+                    "end": 68704.805,
+                    "points": [
+                        68481.63,
+                        68307.484,
+                        68269.39,
+                        68234.016
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぼ",
+                    "start": 68234.016,
+                    "end": 68704.805,
+                    "points": [
+                        68481.63,
+                        68307.484,
+                        68269.39,
+                        68234.016
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "bu",
+                    "start": 69755.086,
+                    "end": 70225.88,
+                    "points": [
+                        70002.72,
+                        69828.57,
+                        69790.47,
+                        69755.086
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぶ",
+                    "start": 69755.086,
+                    "end": 70225.88,
+                    "points": [
+                        70002.72,
+                        69828.57,
+                        69790.47,
+                        69755.086
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "bya",
+                    "start": 71153.74,
+                    "end": 71804.08,
+                    "points": [
+                        71556.46,
+                        71466.664,
+                        71317.01,
+                        71153.74
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "びゃ",
+                    "start": 71153.74,
+                    "end": 71804.08,
+                    "points": [
+                        71556.46,
+                        71466.664,
+                        71317.01,
+                        71153.74
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "byo",
+                    "start": 72677.555,
+                    "end": 73292.516,
+                    "points": [
+                        73044.86,
+                        72955.1,
+                        72827.21,
+                        72677.555
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "びょ",
+                    "start": 72677.555,
+                    "end": 73292.516,
+                    "points": [
+                        73044.86,
+                        72955.1,
+                        72827.21,
+                        72677.555
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "byu",
+                    "start": 74152.336,
+                    "end": 74767.305,
+                    "points": [
+                        74519.68,
+                        74429.93,
+                        74302.01,
+                        74152.336
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "びゅ",
+                    "start": 74152.336,
+                    "end": 74767.305,
+                    "points": [
+                        74519.68,
+                        74429.93,
+                        74302.01,
+                        74152.336
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "cha",
+                    "start": 75809.52,
+                    "end": 76394.555,
+                    "points": [
+                        76149.664,
+                        75904.76,
+                        75858.5,
+                        75809.52
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ちゃ",
+                    "start": 75809.52,
+                    "end": 76394.555,
+                    "points": [
+                        76149.664,
+                        75904.76,
+                        75858.5,
+                        75809.52
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "chi",
+                    "start": 77306.125,
+                    "end": 77970.06,
+                    "points": [
+                        77695.24,
+                        77510.2,
+                        77409.52,
+                        77306.125
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ち",
+                    "start": 77306.125,
+                    "end": 77970.06,
+                    "points": [
+                        77695.24,
+                        77510.2,
+                        77409.52,
+                        77306.125
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "cho",
+                    "start": 79034.016,
+                    "end": 79583.64,
+                    "points": [
+                        79374.16,
+                        79123.805,
+                        79082.99,
+                        79034.016
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ちょ",
+                    "start": 79034.016,
+                    "end": 79583.64,
+                    "points": [
+                        79374.16,
+                        79123.805,
+                        79082.99,
+                        79034.016
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "chu",
+                    "start": 80405.445,
+                    "end": 81006.805,
+                    "points": [
+                        80819.04,
+                        80568.71,
+                        80481.63,
+                        80405.445
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ちゅ",
+                    "start": 80405.445,
+                    "end": 81006.805,
+                    "points": [
+                        80819.04,
+                        80568.71,
+                        80481.63,
+                        80405.445
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "da",
+                    "start": 81839.45,
+                    "end": 82386.41,
+                    "points": [
+                        82119.73,
+                        81948.3,
+                        81893.875,
+                        81839.45
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "だ",
+                    "start": 81839.45,
+                    "end": 82386.41,
+                    "points": [
+                        82119.73,
+                        81948.3,
+                        81893.875,
+                        81839.45
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "de",
+                    "start": 83044.9,
+                    "end": 83534.66,
+                    "points": [
+                        83267.945,
+                        83096.6,
+                        83066.664,
+                        83044.9
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "で",
+                    "start": 83044.9,
+                    "end": 83534.66,
+                    "points": [
+                        83267.945,
+                        83096.6,
+                        83066.664,
+                        83044.9
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "do",
+                    "start": 84193.195,
+                    "end": 84710.15,
+                    "points": [
+                        84459.86,
+                        84272.11,
+                        84217.69,
+                        84193.195
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ど",
+                    "start": 84193.195,
+                    "end": 84710.15,
+                    "points": [
+                        84459.86,
+                        84272.11,
+                        84217.69,
+                        84193.195
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "e",
+                    "start": 85673.47,
+                    "end": 86111.49,
+                    "points": [
+                        85967.35,
+                        85673.47,
+                        85755.1,
+                        85673.47
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "え",
+                    "start": 85673.47,
+                    "end": 86111.49,
+                    "points": [
+                        85967.35,
+                        85673.47,
+                        85755.1,
+                        85673.47
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "fu",
+                    "start": 86960.54,
+                    "end": 87648.98,
+                    "points": [
+                        87431.29,
+                        87178.23,
+                        87063.945,
+                        86960.54
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ふ",
+                    "start": 86960.54,
+                    "end": 87648.98,
+                    "points": [
+                        87431.29,
+                        87178.23,
+                        87063.945,
+                        86960.54
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ga",
+                    "start": 88995.92,
+                    "end": 89488.44,
+                    "points": [
+                        89273.47,
+                        89107.484,
+                        89042.17,
+                        88995.92
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "が",
+                    "start": 88995.92,
+                    "end": 89488.44,
+                    "points": [
+                        89273.47,
+                        89107.484,
+                        89042.17,
+                        88995.92
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ge",
+                    "start": 90375.555,
+                    "end": 90914.28,
+                    "points": [
+                        90653.19,
+                        90487.055,
+                        90421.79,
+                        90375.555
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "げ",
+                    "start": 90375.555,
+                    "end": 90914.28,
+                    "points": [
+                        90653.19,
+                        90487.055,
+                        90421.79,
+                        90375.555
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "gi",
+                    "start": 92155.1,
+                    "end": 92631.3,
+                    "points": [
+                        92375.51,
+                        92239.46,
+                        92193.19,
+                        92155.1
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぎ",
+                    "start": 92155.1,
+                    "end": 92631.3,
+                    "points": [
+                        92375.51,
+                        92239.46,
+                        92193.19,
+                        92155.1
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "go",
+                    "start": 93599.99,
+                    "end": 94127.89,
+                    "points": [
+                        93896.59,
+                        93725.17,
+                        93662.586,
+                        93599.99
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ご",
+                    "start": 93599.99,
+                    "end": 94127.89,
+                    "points": [
+                        93896.59,
+                        93725.17,
+                        93662.586,
+                        93599.99
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "gu",
+                    "start": 95200.0,
+                    "end": 95749.7,
+                    "points": [
+                        95518.44,
+                        95346.94,
+                        95276.19,
+                        95200.0
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぐ",
+                    "start": 95200.0,
+                    "end": 95749.7,
+                    "points": [
+                        95518.44,
+                        95346.94,
+                        95276.19,
+                        95200.0
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "gya",
+                    "start": 96519.73,
+                    "end": 97205.45,
+                    "points": [
+                        96919.734,
+                        96802.72,
+                        96650.336,
+                        96519.73
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぎゃ",
+                    "start": 96519.73,
+                    "end": 97205.45,
+                    "points": [
+                        96919.734,
+                        96802.72,
+                        96650.336,
+                        96519.73
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "gyo",
+                    "start": 97703.41,
+                    "end": 98389.125,
+                    "points": [
+                        98103.46,
+                        97986.4,
+                        97834.055,
+                        97703.41
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぎょ",
+                    "start": 97703.41,
+                    "end": 98389.125,
+                    "points": [
+                        98103.46,
+                        97986.4,
+                        97834.055,
+                        97703.41
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "gyu",
+                    "start": 99156.43,
+                    "end": 99842.17,
+                    "points": [
+                        99556.555,
+                        99439.45,
+                        99287.086,
+                        99156.43
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぎゅ",
+                    "start": 99156.43,
+                    "end": 99842.17,
+                    "points": [
+                        99556.555,
+                        99439.45,
+                        99287.086,
+                        99156.43
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ha",
+                    "start": 100832.66,
+                    "end": 101382.31,
+                    "points": [
+                        101102.04,
+                        100914.28,
+                        100878.91,
+                        100832.66
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "は",
+                    "start": 100832.66,
+                    "end": 101382.31,
+                    "points": [
+                        101102.04,
+                        100914.28,
+                        100878.91,
+                        100832.66
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "he",
+                    "start": 102712.92,
+                    "end": 103262.61,
+                    "points": [
+                        103034.01,
+                        102794.555,
+                        102759.19,
+                        102712.92
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "へ",
+                    "start": 102712.92,
+                    "end": 103262.61,
+                    "points": [
+                        103034.01,
+                        102794.555,
+                        102759.19,
+                        102712.92
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "hi",
+                    "start": 104470.734,
+                    "end": 105020.42,
+                    "points": [
+                        104851.7,
+                        104552.38,
+                        104517.0,
+                        104470.734
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ひ",
+                    "start": 104470.734,
+                    "end": 105020.42,
+                    "points": [
+                        104851.7,
+                        104552.38,
+                        104517.0,
+                        104470.734
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ho",
+                    "start": 106315.664,
+                    "end": 106865.336,
+                    "points": [
+                        106609.52,
+                        106397.28,
+                        106361.914,
+                        106315.664
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ほ",
+                    "start": 106315.664,
+                    "end": 106865.336,
+                    "points": [
+                        106609.52,
+                        106397.28,
+                        106361.914,
+                        106315.664
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "hya",
+                    "start": 107858.5,
+                    "end": 108601.37,
+                    "points": [
+                        108337.414,
+                        108179.586,
+                        108021.77,
+                        107858.5
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ひゃ",
+                    "start": 107858.5,
+                    "end": 108601.37,
+                    "points": [
+                        108337.414,
+                        108179.586,
+                        108021.77,
+                        107858.5
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "hyo",
+                    "start": 109401.375,
+                    "end": 110144.23,
+                    "points": [
+                        109880.29,
+                        109722.445,
+                        109564.63,
+                        109401.375
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ひょ",
+                    "start": 109401.375,
+                    "end": 110144.23,
+                    "points": [
+                        109880.29,
+                        109722.445,
+                        109564.63,
+                        109401.375
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "hyu",
+                    "start": 110783.66,
+                    "end": 111526.51,
+                    "points": [
+                        111262.57,
+                        111104.766,
+                        110946.914,
+                        110783.66
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ひゅ",
+                    "start": 110783.66,
+                    "end": 111526.51,
+                    "points": [
+                        111262.57,
+                        111104.766,
+                        110946.914,
+                        110783.66
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "i",
+                    "start": 112468.03,
+                    "end": 112914.29,
+                    "points": [
+                        112715.65,
+                        112468.03,
+                        112604.08,
+                        112468.03
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "い",
+                    "start": 112468.03,
+                    "end": 112914.29,
+                    "points": [
+                        112715.65,
+                        112468.03,
+                        112604.08,
+                        112468.03
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ja",
+                    "start": 113997.27,
+                    "end": 114552.38,
+                    "points": [
+                        114274.82,
+                        114138.78,
+                        114073.47,
+                        113997.27
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "じゃ",
+                    "start": 113997.27,
+                    "end": 114552.38,
+                    "points": [
+                        114274.82,
+                        114138.78,
+                        114073.47,
+                        113997.27
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ji",
+                    "start": 115063.945,
+                    "end": 115646.266,
+                    "points": [
+                        115306.125,
+                        115232.65,
+                        115151.016,
+                        115063.945
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "じ",
+                    "start": 115063.945,
+                    "end": 115646.266,
+                    "points": [
+                        115306.125,
+                        115232.65,
+                        115151.016,
+                        115063.945
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "jo",
+                    "start": 116440.81,
+                    "end": 117009.516,
+                    "points": [
+                        116751.02,
+                        116563.266,
+                        116517.016,
+                        116440.81
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "じょ",
+                    "start": 116440.81,
+                    "end": 117009.516,
+                    "points": [
+                        116751.02,
+                        116563.266,
+                        116517.016,
+                        116440.81
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ju",
+                    "start": 117616.33,
+                    "end": 118244.88,
+                    "points": [
+                        117953.75,
+                        117798.64,
+                        117717.01,
+                        117616.33
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "じゅ",
+                    "start": 117616.33,
+                    "end": 118244.88,
+                    "points": [
+                        117953.75,
+                        117798.64,
+                        117717.01,
+                        117616.33
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ka",
+                    "start": 119265.305,
+                    "end": 119795.96,
+                    "points": [
+                        119586.39,
+                        119349.664,
+                        119306.125,
+                        119265.305
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "か",
+                    "start": 119265.305,
+                    "end": 119795.96,
+                    "points": [
+                        119586.39,
+                        119349.664,
+                        119306.125,
+                        119265.305
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ke",
+                    "start": 120669.4,
+                    "end": 121200.07,
+                    "points": [
+                        120990.5,
+                        120753.734,
+                        120710.2,
+                        120669.4
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "け",
+                    "start": 120669.4,
+                    "end": 121200.07,
+                    "points": [
+                        120990.5,
+                        120753.734,
+                        120710.2,
+                        120669.4
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ki",
+                    "start": 122511.58,
+                    "end": 123042.27,
+                    "points": [
+                        122917.016,
+                        122595.914,
+                        122552.375,
+                        122511.58
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "き",
+                    "start": 122511.58,
+                    "end": 123042.27,
+                    "points": [
+                        122917.016,
+                        122595.914,
+                        122552.375,
+                        122511.58
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ko",
+                    "start": 124468.02,
+                    "end": 124982.41,
+                    "points": [
+                        124778.234,
+                        124536.06,
+                        124503.4,
+                        124468.02
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "こ",
+                    "start": 124468.02,
+                    "end": 124982.41,
+                    "points": [
+                        124778.234,
+                        124536.06,
+                        124503.4,
+                        124468.02
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ku",
+                    "start": 125907.46,
+                    "end": 126555.1,
+                    "points": [
+                        126318.37,
+                        125975.51,
+                        125942.836,
+                        125907.46
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "く",
+                    "start": 125907.46,
+                    "end": 126555.1,
+                    "points": [
+                        126318.37,
+                        125975.51,
+                        125942.836,
+                        125907.46
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "kya",
+                    "start": 127325.17,
+                    "end": 127931.98,
+                    "points": [
+                        127711.56,
+                        127420.41,
+                        127368.71,
+                        127325.17
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "きゃ",
+                    "start": 127325.17,
+                    "end": 127931.98,
+                    "points": [
+                        127711.56,
+                        127420.41,
+                        127368.71,
+                        127325.17
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "kyo",
+                    "start": 128835.38,
+                    "end": 129537.414,
+                    "points": [
+                        129338.77,
+                        128930.61,
+                        128878.92,
+                        128835.38
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "きょ",
+                    "start": 128835.38,
+                    "end": 129537.414,
+                    "points": [
+                        129338.77,
+                        128930.61,
+                        128878.92,
+                        128835.38
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "kyu",
+                    "start": 130307.47,
+                    "end": 131009.5,
+                    "points": [
+                        130767.34,
+                        130402.72,
+                        130351.01,
+                        130307.47
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "きゅ",
+                    "start": 130307.47,
+                    "end": 131009.5,
+                    "points": [
+                        130767.34,
+                        130402.72,
+                        130351.01,
+                        130307.47
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ma",
+                    "start": 131776.8,
+                    "end": 132329.25,
+                    "points": [
+                        132092.52,
+                        131872.11,
+                        131820.36,
+                        131776.8
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ま",
+                    "start": 131776.8,
+                    "end": 132329.25,
+                    "points": [
+                        132092.52,
+                        131872.11,
+                        131820.36,
+                        131776.8
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "me",
+                    "start": 133052.97,
+                    "end": 133510.2,
+                    "points": [
+                        133278.92,
+                        133148.31,
+                        133096.52,
+                        133052.97
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "め",
+                    "start": 133052.97,
+                    "end": 133510.2,
+                    "points": [
+                        133278.92,
+                        133148.31,
+                        133096.52,
+                        133052.97
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "mi",
+                    "start": 134375.52,
+                    "end": 134876.19,
+                    "points": [
+                        134685.7,
+                        134514.28,
+                        134443.53,
+                        134375.52
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "み",
+                    "start": 134375.52,
+                    "end": 134876.19,
+                    "points": [
+                        134685.7,
+                        134514.28,
+                        134443.53,
+                        134375.52
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "mo",
+                    "start": 135725.17,
+                    "end": 136195.92,
+                    "points": [
+                        135989.11,
+                        135858.5,
+                        135787.95,
+                        135725.17
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "も",
+                    "start": 135725.17,
+                    "end": 136195.92,
+                    "points": [
+                        135989.11,
+                        135858.5,
+                        135787.95,
+                        135725.17
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "mu",
+                    "start": 137210.88,
+                    "end": 137727.89,
+                    "points": [
+                        137512.92,
+                        137281.62,
+                        137246.25,
+                        137210.88
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "む",
+                    "start": 137210.88,
+                    "end": 137727.89,
+                    "points": [
+                        137512.92,
+                        137281.62,
+                        137246.25,
+                        137210.88
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "mya",
+                    "start": 138413.61,
+                    "end": 139093.88,
+                    "points": [
+                        138824.5,
+                        138699.31,
+                        138527.89,
+                        138413.61
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "みゃ",
+                    "start": 138413.61,
+                    "end": 139093.88,
+                    "points": [
+                        138824.5,
+                        138699.31,
+                        138527.89,
+                        138413.61
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "myo",
+                    "start": 139695.36,
+                    "end": 140329.25,
+                    "points": [
+                        140106.27,
+                        139980.95,
+                        139809.66,
+                        139695.36
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "みょ",
+                    "start": 139695.36,
+                    "end": 140329.25,
+                    "points": [
+                        140106.27,
+                        139980.95,
+                        139809.66,
+                        139695.36
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "myu",
+                    "start": 140971.53,
+                    "end": 141572.78,
+                    "points": [
+                        141382.42,
+                        141257.14,
+                        141085.88,
+                        140971.53
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "みゅ",
+                    "start": 140971.53,
+                    "end": 141572.78,
+                    "points": [
+                        141382.42,
+                        141257.14,
+                        141085.88,
+                        140971.53
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "n",
+                    "start": 142560.58,
+                    "end": 143191.86,
+                    "points": [
+                        142914.28,
+                        142563.27,
+                        142688.55,
+                        142560.58
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "na",
+                    "start": 144174.16,
+                    "end": 144770.06,
+                    "points": [
+                        144582.31,
+                        144337.42,
+                        144253.06,
+                        144174.16
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "な",
+                    "start": 144174.16,
+                    "end": 144770.06,
+                    "points": [
+                        144582.31,
+                        144337.42,
+                        144253.06,
+                        144174.16
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ne",
+                    "start": 145956.56,
+                    "end": 146552.44,
+                    "points": [
+                        146288.44,
+                        146119.72,
+                        146035.47,
+                        145956.56
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ね",
+                    "start": 145956.56,
+                    "end": 146552.44,
+                    "points": [
+                        146288.44,
+                        146119.72,
+                        146035.47,
+                        145956.56
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ni",
+                    "start": 147534.69,
+                    "end": 148141.5,
+                    "points": [
+                        147877.44,
+                        147708.84,
+                        147616.33,
+                        147534.69
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "に",
+                    "start": 147534.69,
+                    "end": 148141.5,
+                    "points": [
+                        147877.44,
+                        147708.84,
+                        147616.33,
+                        147534.69
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "no",
+                    "start": 148987.75,
+                    "end": 149556.56,
+                    "points": [
+                        149336.05,
+                        149123.81,
+                        149055.78,
+                        148987.75
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "の",
+                    "start": 148987.75,
+                    "end": 149556.56,
+                    "points": [
+                        149336.05,
+                        149123.81,
+                        149055.78,
+                        148987.75
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "nu",
+                    "start": 150454.42,
+                    "end": 151050.45,
+                    "points": [
+                        150810.89,
+                        150617.69,
+                        150541.48,
+                        150454.42
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "ぬ",
+                    "start": 150454.42,
+                    "end": 151050.45,
+                    "points": [
+                        150810.89,
+                        150617.69,
+                        150541.48,
+                        150454.42
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "nya",
+                    "start": 151684.36,
+                    "end": 152310.2,
+                    "points": [
+                        152084.36,
+                        151872.11,
+                        151771.42,
+                        151684.36
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "にゃ",
+                    "start": 151684.36,
+                    "end": 152310.2,
+                    "points": [
+                        152084.36,
+                        151872.11,
+                        151771.42,
+                        151684.36
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "nyo",
+                    "start": 153186.39,
+                    "end": 153918.48,
+                    "points": [
+                        153627.22,
+                        153480.28,
+                        153325.17,
+                        153186.39
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                },
+                {
+                    "sample": "baseline.wav",
+                    "name": "にょ",
+                    "start": 153186.39,
+                    "end": 153918.48,
+                    "points": [
+                        153627.22,
+                        153480.28,
+                        153325.17,
+                        153186.39
+                    ],
+                    "extras": [
+                        "500"
+                    ],
+                    "notes": {
+                        "done": true,
+                        "star": false,
+                        "tag": ""
+                    },
+                    "needSync": false
+                }
+            ],
+            "currentIndex": 208,
+            "extras": {
+            },
+            "rawFilePath": "BASE\\oto.ini",
+            "entryFilter": null
+        }
+    ],
+    "currentModuleIndex": 0,
+    "autoExport": false
+}
