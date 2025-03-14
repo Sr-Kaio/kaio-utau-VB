@@ -1,0 +1,6 @@
+name=SR KAIO C+V ENG v0.1.0
+author=Sr Kaio
+web=
+sample=
+image=icon.bmp
+version=0.1.0
